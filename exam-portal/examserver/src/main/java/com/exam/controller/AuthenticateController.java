@@ -1,5 +1,6 @@
-package com.exam.config;
+package com.exam.controller;
 
+import com.exam.config.JwtUtils;
 import com.exam.model.JwtRequest;
 import com.exam.model.JwtResponse;
 import com.exam.model.User;
@@ -11,8 +12,6 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;

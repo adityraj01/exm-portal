@@ -1,13 +1,21 @@
 package com.exam.controller;
 
-import com.exam.model.Role;
-import com.exam.model.User;
-import com.exam.model.UserRole;
+import com.exam.config.JwtUtils;
+import com.exam.helper.UserFoundException;
+import com.exam.model.*;
 import com.exam.service.UserService;
+import com.exam.service.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -51,4 +59,5 @@ public class UserController {
     public void deleteUser(@PathVariable("userId") Long userId){
         this.userService.deleteUser(userId);
     }
+
 }
