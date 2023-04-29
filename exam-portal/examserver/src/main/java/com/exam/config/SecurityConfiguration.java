@@ -35,8 +35,8 @@ public class SecurityConfiguration {
     private Object jwtAuthenticationEntryPoint;
 
     @Bean
-    public BCryptPasswordEncoder  passwordEncoder(){
-        return new BCryptPasswordEncoder();
+    public PasswordEncoder passwordEncoder(){
+        return NoOpPasswordEncoder.getInstance();
     }
 
     @Bean
